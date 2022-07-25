@@ -1,0 +1,157 @@
+<h1 class="text-primary">Danh sách từ khoá</h1>
+<div class="add-button">
+    <button nbButton status="primary">
+        Thêm
+    </button>
+</div>
+
+<div class="row">
+	<div class="col-lg-12">
+		<nb-accordion>
+			<nb-accordion-item expanded="true">
+				<nb-accordion-item-header>
+					Tìm kiếm từ khoá
+				</nb-accordion-item-header>
+				<nb-accordion-item-body>
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="form-group">
+								<label for="inputName" class="label">Từ khoá</label>
+								<input type="text" nbInput fullWidth id="inputName" placeholder="Mô tả">
+						  	</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-6">
+							<div class="form-group">
+								<label for="inputCreateBy" class="label">Create by</label>
+								<input type="text" nbInput fullWidth id="inputEmail" placeholder="Create by">
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="form-group">
+								<label for="inputChangeBy" class="label">Change by</label>
+								<input type="text" nbInput fullWidth id="inputEmail" placeholder="Change by">
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-6">
+							<div class="form-group">
+								<label for="inputCreateBy" class="label">Create at</label>
+								<div style="display: flex;">
+									<nb-form-field>
+										<input fullWidth
+											#create1
+											nbInput
+											placeholder="yyyy/MM/dd"
+											[nbDatepicker]="createAt1"
+										>
+										<button nbSuffix nbButton ghost (click)="create1.click()">
+											<nb-icon
+												nbSuffix
+												icon="calendar-outline"
+												pack="eva"
+												style="cursor: pointer"
+											></nb-icon>
+										</button>									
+										<nb-datepicker #createAt1></nb-datepicker>
+									</nb-form-field>									
+									<span class="center_span">~</span>
+									<nb-form-field>
+										<input fullWidth
+											#create2
+											nbInput
+											placeholder="yyyy/MM/dd"
+											[nbDatepicker]="createAt2"
+										>
+										<button nbSuffix nbButton ghost (click)="create2.click()">
+											<nb-icon
+												nbSuffix
+												icon="calendar-outline"
+												pack="eva"
+												style="cursor: pointer"
+											></nb-icon>
+										</button>									
+										<nb-datepicker #createAt2></nb-datepicker>
+									</nb-form-field>
+								</div>							
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="form-group">
+								<label for="inputCreateBy" class="label">Change at</label>
+								<div style="display: flex;">
+									<nb-form-field>
+										<input
+											#change1
+											nbInput
+											placeholder="yyyy/MM/dd"
+											[nbDatepicker]="changeAt1"
+										>
+										<button nbSuffix nbButton ghost (click)="change1.click()">
+											<nb-icon
+												nbSuffix
+												icon="calendar-outline"
+												pack="eva"
+												style="cursor: pointer"
+											></nb-icon>
+										</button>									
+										<nb-datepicker #changeAt1></nb-datepicker>
+									</nb-form-field>
+									<span class="center_span">~</span>
+									<nb-form-field>
+										<input
+											#change2
+											nbInput
+											placeholder="yyyy/MM/dd"
+											[nbDatepicker]="changeAt2"
+										>
+										<button nbSuffix nbButton ghost (click)="change2.click()">
+											<nb-icon
+												nbSuffix
+												icon="calendar-outline"
+												pack="eva"
+												style="cursor: pointer"
+											></nb-icon>
+										</button>									
+										<nb-datepicker #changeAt2></nb-datepicker>
+									</nb-form-field>	
+								</div>								
+							</div>
+						</div>
+					</div>
+
+					<div class="button-group">
+						<button type="reset" nbButton status="primary" size="medium">
+							Clear
+						</button>
+						<button type="submit" nbButton status="primary">
+							Search
+						</button>
+					</div>					
+				</nb-accordion-item-body>
+			</nb-accordion-item>
+		</nb-accordion>
+	</div>
+</div>
+<div class="row">
+	<div class="col-lg-12">
+		<nb-accordion>
+			<nb-accordion-item expanded="true">
+				<nb-accordion-item-header>
+					Danh sách từ khoá
+				</nb-accordion-item-header>
+			
+				<nb-accordion-item-body>
+					<ng2-smart-table
+						[settings]="settings"
+						[source]="source"
+						(custom)="onCustomEvent($event)"
+					>
+					</ng2-smart-table>
+				</nb-accordion-item-body>
+			</nb-accordion-item>			
+		</nb-accordion>
+	</div>
+</div>

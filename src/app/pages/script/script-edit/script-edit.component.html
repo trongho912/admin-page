@@ -1,0 +1,142 @@
+<h3 class="text-primary">Script Edit</h3>
+
+<div class="row">
+    <div class="col-lg-12">
+        <nb-card expanded="true">
+            <nb-card-header>
+                <div class="row header-row">
+                    <div class="script-description col-sm-10">
+                        <input 
+                            type="text" 
+                            nbInput 
+                            fullWidth 
+                            id="input-description"
+                            [(ngModel)] = "scriptDescription" 
+                            spellcheck="false">
+                    </div>
+                    <div class="col-sm-2 save-button">
+                        <button type="submit" nbButton (click)="onClickBack()" status="primary">
+                            Back
+                        </button>
+                    </div>
+                </div>
+                
+                
+            </nb-card-header>  
+            <nb-card-body>
+                <div class="row">
+                    <div class="message-create col-sm-6">
+                        <nb-card expanded="true">
+                            <nb-card-header>
+                                Message Setting        
+                            </nb-card-header>
+                            <nb-card-body>
+                                <nb-tabset>
+                                    <nb-tab tabTitle="Create Message">
+                                        <form>
+                                        <div class="form-group row">
+                                            <label for="inputEmail1" class="label col-sm-3 col-form-label">Content</label>
+                                            <div class="col-sm-9">
+                                            <input type="email" nbInput fullWidth id="inputContent" placeholder="Content">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 label">Sender: </label>
+                                            <div class="col-sm-9">
+                                            <nb-radio-group>
+                                                <nb-radio>Bot</nb-radio>
+                                                <nb-radio>Guest</nb-radio>
+                                            </nb-radio-group>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 label">Type of content: </label>
+                                            <div class="col-sm-9">
+                                            <nb-radio-group>
+                                                <nb-radio>Text</nb-radio>
+                                                <nb-radio>Url</nb-radio>
+                                                <nb-radio>Image</nb-radio>
+                                                <nb-radio>Script string</nb-radio>
+                                                <nb-radio>Button</nb-radio>
+                                            </nb-radio-group>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="offset-sm-3 col-sm-9">
+                                                <button type="submit" nbButton status="primary">Add to script</button>
+                                            </div>
+                                        </div>
+                                        </form> 
+                                    </nb-tab>
+                                    <nb-tab tabTitle="Edit Message">
+                                        <form>
+                                            <div class="form-group row">
+                                                <label for="inputContent" class="label col-sm-3 col-form-label">Content</label>
+                                                <div class="col-sm-9">
+                                                    <input type="email" nbInput fullWidth id="inputContent" placeholder="Content">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 label">Sender: </label>
+                                                <div class="col-sm-9">
+                                                <nb-radio-group>
+                                                    <nb-radio>Bot</nb-radio>
+                                                    <nb-radio>Guest</nb-radio>
+                                                </nb-radio-group>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 label">Type of content: </label>
+                                                <div class="col-sm-9">
+                                                <nb-radio-group>
+                                                    <nb-radio value="text">Text</nb-radio>
+                                                    <nb-radio value="url">Url</nb-radio>
+                                                    <nb-radio value="image">Image</nb-radio>
+                                                    <nb-radio value="script-string">Script string</nb-radio>
+                                                    <nb-radio value="button">Button</nb-radio>
+                                                </nb-radio-group>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="offset-sm-3 col-sm-9">
+                                                    <button type="submit" nbButton status="primary">Update to script</button>
+                                                </div>
+                                            </div>
+                                            </form> 
+                                    </nb-tab>
+                                    <nb-tab tabTitle="Simple Tab #3">
+                                        <span>Content #3</span> 
+                                    </nb-tab>
+                                </nb-tabset>
+                            </nb-card-body>
+                            <nb-card-footer>
+
+                            </nb-card-footer>
+                        </nb-card>
+                    </div>
+                    <div class="message-view col-sm-6">
+                        <nb-card expanded="true">
+                            <nb-card-header>
+                                Message View
+                            </nb-card-header>
+                            <nb-card-body>
+                                {{scriptMessages}}
+                            </nb-card-body>
+                        </nb-card>
+                    </div>
+                </div>
+            </nb-card-body>  
+            <nb-card-footer>
+                <div class="button-group">
+                    <button type="submit" nbButton status="primary" (click)="onClickSave()" size="medium">
+                        Save
+                    </button>
+                    <button type="submit" nbButton status="primary" (click)="onClickDelete()">
+                        Delete
+                    </button>
+                </div>
+            </nb-card-footer>        
+        </nb-card>
+    </div>
+
+</div>
